@@ -1,0 +1,51 @@
+/*app styles*/
+header {
+  color: #fff;
+  background: #444;
+  text-align: center;
+}
+
+main {
+  background: #5555ff;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+footer {
+
+  background: #444;
+  color: #fff;
+  text-align: center;
+}
+/*Attempted to mess with sticky footer idea and after a few attempts have placed it on the backburner*/
+/*.header {
+  margin-bottom: -50px;
+  height: 100px;
+}
+
+.main {
+  min-height: 100%;
+}
+
+.maincontent {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.footer {
+  height: 50px;
+  margin-top: -50px;
+}*/
