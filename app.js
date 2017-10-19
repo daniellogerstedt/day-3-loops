@@ -27,8 +27,9 @@ var favNumber;
 var inputNumber;
 
 // Seventh Question Variable - Day 3
-var favFoods = ['cookies', 'tacos', 'chips', 'cake', 'pie'];
-
+var favFoods = ['cookies', 'tacos', 'chips', 'cake', 'pie', 'pizza'];
+var flag = false;
+var guesses = 0;
 // Creates the counter - Day 3
 var counter = 1;
 
@@ -38,25 +39,33 @@ var correctAnswers = 0;
 // Number of answers incorrect - Day 3
 var incorrectAnswers = 0;
 
-// I won't count the first non number against someone
-var notNumCounter = 0;
-
 // Food Question - Day 3
-var foodAnswer = prompt('Guess one of my favorite foods').toLowerCase();
-for (var i = 0; i < favFoods.length; i++) {
-  if (foodAnswer = favFoods[i]){
-    alert('Wow! I definitely like ' + foodAnswer);
-    correctAnswers++;
-    break;
-  } else if (i === favFoods.length) {
-    incorrectAnswers++;
+while (guesses < 6 && flag === false) {
+  var foodAnswer = prompt('Guess one of my favorite foods').toLowerCase();
+  for (var i = 0; i < favFoods.length; i++) {
+    if (foodAnswer === favFoods[i]){
+      alert('Wow! I definitely like ' + foodAnswer);
+      correctAnswers++;
+      flag = true;
+      console.log(flag);
+      break;
+    }
+  }
+  guesses++;
+  if (flag === true) {
+    alert('you guessed ' + guesses + ' time');
+  }
+  if (guesses === 6) {
+    alert('sorry you only had 6 guesses');
   }
 }
 
-while (favNumber !== 13) {
+
+while (favNumber !== 13 && counter < 4) {
   inputNumber = prompt('Alright now guess my favorite number and we will see how many guesses it takes');
   favNumber = parseInt(inputNumber);
   console.log(favNumber);
+  console.log(isNaN(favNumber));
   if (favNumber > 13) {
     alert('You guessed too high!');
     counter++;
@@ -65,29 +74,15 @@ while (favNumber !== 13) {
     alert('You guessed too low!');
     counter++;
     console.log(counter);
-  } else if (notNumCounter === 0 && favNumber.isNaN) {
-    if (inputNumber === null) {
-      alert('Clicking cancel isn\'t a guess, I won\'t count it against you this time');
-      notNumCounter++;
-      console.log(notNumCounter);
-    } else if (favNumber.isNaN) {
-      alert(inputNumber + ' isn\'t a number, this won\'t count against you this time');
-      notNumCounter++;
-      console.log(notNumCounter);
-    }
-  } else if (notNumCounter === 1 && favNumber.isNaN) {
-  // This following code is used to incriment the counter after the first attempt to cancel or enter something that isn't a number has happened
-    if (inputNumber === null) {
-      alert('I already told you clicking cancel isn\'t a guess');
-      counter++;
-      console.log(counter);
-    } else if (inputNumber.isNaN) {
-      alert(inputNumber + ' isn\'t a number');
-      counter++;
-      console.log(counter);
-    }
+  } else if (isNaN(favNumber)) {
+    alert(inputNumber + ' isn\'t a number');
+    counter++;
+    console.log(counter);
   } else if (favNumber === 13){
     alert(favNumber + ' is truely my favorite number.');
+  }
+  if (counter === 4) {
+    alert('sorry but you only get 4 guesses');
   }
 }
 
