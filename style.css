@@ -27,6 +27,10 @@ main .hobbies h2, .favoritetype, .languages {
   height: 100px;
 }
 
+.snowboard p {
+  text-align: center;
+}
+
 main .hobbies section {
   float: left;
   position: relative;
@@ -48,11 +52,13 @@ main .hobbies ul {
 
 main .hobbies section p {
   position: absolute;
-  bottom: -25px;
-  height: 100px;
+  bottom: 0;
+  height: 60px;
   background: #000;
   color: #888;
-  margin: 0px;
+  margin: 0;
+  width: 100%;
+  overflow: auto;
 }
 
 main .hobbies section img {
