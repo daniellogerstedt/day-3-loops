@@ -1,12 +1,85 @@
 /*app styles*/
+
+/*clearfix*/
+.clearfix {
+  clear: both;
+}
+
+/*favorites list styles*/
+main .hobbies h2, .favoritetype, .languages {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  background: #444;
+  color: #5555ff;
+  height: 50px;
+  padding-top: 25px;
+}
+
+.favoritetype, .languages {
+  background: #5555ff;
+  color: #000;
+}
+
+.languages {
+  margin-bottom: 20px;
+  height: 100px;
+}
+
+main .hobbies section {
+  float: left;
+  position: relative;
+  height: 200px;
+  width: 30%;
+  border: ridge 3px black;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+main .hobbies section:last-child {
+  margin-right 0;
+}
+
+main .hobbies ul {
+  margin: 0 3%;
+  width: 100%
+}
+
+main .hobbies section p {
+  position: absolute;
+  bottom: -25px;
+  height: 100px;
+  background: #000;
+  color: #888;
+  margin: 0px;
+}
+
+main .hobbies section img {
+  position: absolute;
+  width: 100%;
+  display: block;
+}
+
 header {
   color: #fff;
   background: #444;
   text-align: center;
+  height: 100px;
+  width: 100%;
+  padding-top: 50px;
+  z-index: 4;
+  margin: 0 auto;
+  position: fixed;
 }
 
 main {
+  width: 80%;
+  position: relative;
+  margin: 0 auto;
   background: #5555ff;
+  margin-top: -50px;
+  padding-top: 175px;
 }
 
 h1 {
@@ -16,7 +89,7 @@ h1 {
 }
 
 p {
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
 h2 {
