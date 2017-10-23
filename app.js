@@ -24,13 +24,13 @@ var cArray = ['Yeah, Dan does like dogs!', 'Correct, Dan doesn\'t usually wear h
 var iArray = ['Nah, Dan does infact like dogs.', 'Nah, Dan owns hats but wears none.', 'Dan actually does like games.', 'Incorrect, Dan was in the Army.', 'Wrong, Beer is super diverse and great.'];
 function yesNoQuestions (guess, expect, variate, question, correct, incorrect) {
   for (var i = 0; i < question.length; i ++) {
-    gArray.push(prompt(qArray[i]));
-    if (gArray[i] === eArray[i] || gArray[i] === vArray[i]) {
-      alert(cArray[i]);
+    gArray.push(prompt(question[i]));
+    if (guess[i] === expect[i] || guess[i] === variate[i]) {
+      alert(correct[i]);
       correctAnswers++;
     } else {
-      alert(iArray[i]);
-      incorrectAnswer++;
+      alert(incorrect[i]);
+      incorrectAnswers++;
     }
   }
 }
